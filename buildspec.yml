@@ -1,0 +1,18 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      java: openjdk11
+  pre_build:
+    commands:
+      - echo Nothing to do in pre_build phase
+  build:
+    commands:
+      - java -version
+      - mvn package
+  post_build:
+    commands:
+      - echo Plan is to Upload this jar to S3 bucket
+artifacts:
+  files:
+    - target/my-app-1.0-SNAPSHOT.jar
